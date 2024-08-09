@@ -1,0 +1,14 @@
+load csv with headers from "file:///skills_end.csv" as gos create (a1:技能{name:gos.skills,ID:gos.ID,Label:gos.LABEL}) return a1
+
+load csv with headers from "file:///position_name.csv" as pos create (a1:岗位{name:pos.position_name,ID:pos.ID,Label:pos.LABEL}) return a1
+
+load csv with headers from "file:///relation_1.csv" as rela match (from:`岗位`{ID:rela.START_ID}),(to:`技能`{ID:rela.END_ID}) merge (from) - [r:了解{property:rela.relation}] -> (to)
+
+load csv with headers from "file:///relation_2.csv" as rela match (from:`岗位`{ID:rela.START_ID}),(to:`技能`{ID:rela.END_ID}) merge (from) - [r:熟悉{property:rela.relation}] -> (to)
+
+load csv with headers from "file:///relation_3.csv" as rela match (from:`岗位`{ID:rela.START_ID}),(to:`技能`{ID:rela.END_ID}) merge (from) - [r:要求{property:rela.relation}] -> (to)
+
+load csv with headers from "file:///relation_4.csv" as rela match (from:`岗位`{ID:rela.START_ID}),(to:`技能`{ID:rela.END_ID}) merge (from) - [r:优先{property:rela.relation}] -> (to)
+
+load csv with headers from "file:///relation_5.csv" as rela match (from:`岗位`{ID:rela.START_ID}),(to:`技能`{ID:rela.END_ID}) merge (from) - [r:掌握{property:rela.relation}] -> (to)
+

@@ -1,0 +1,34 @@
+option = {
+    title: {
+        text: '职位薪资占比',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+    },
+    series: [
+        {
+            name: '访问来源',
+            type: 'pie',
+            radius: '50%',
+            data: [
+                {value: 1839, name: '薪资面议'},
+                {value: 1968, name: '0-5k'},
+                {value: 433, name: '6-10k'},
+                {value: 313, name: '10-20k'},
+                {value: 66, name: '20k+'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
